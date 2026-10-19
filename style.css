@@ -1,0 +1,767 @@
+/* ==========================================================================
+   1. CSS VARIABLES & RESET
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --primary-pink: #FF8FAB;
+    --primary-pink-hover: #fa7696;
+    --bg-cream: #FFF5E9;
+    --text-brown: #493323;
+    --text-brown-light: #70543e;
+    --accent-green: #B7E4C7;
+    --accent-peach: #FFCDB2;
+    --white: #FFFFFF;
+    
+    /* Typography */
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Outfit', sans-serif;
+    
+    /* Spacing & Borders */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 32px;
+    --radius-pill: 100px;
+    --shadow-sm: 0 4px 6px rgba(73, 51, 35, 0.05);
+    --shadow-md: 0 12px 24px rgba(73, 51, 35, 0.08);
+    --shadow-hover: 0 20px 40px rgba(73, 51, 35, 0.12);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-cream);
+    color: var(--text-brown);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. TYPOGRAPHY & UTILITIES
+   ========================================================================== */
+h1, h2, h3, h4, .brand-logo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-brown);
+}
+
+h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); letter-spacing: -0.02em; margin-bottom: 1rem; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+p {
+    color: var(--text-brown-light);
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul { list-style: none; }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding { padding: 5rem 0; }
+.text-center { text-align: center; }
+.sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+}
+
+/* ==========================================================================
+   3. BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-pink);
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-pink-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--text-brown);
+    color: var(--text-brown);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-brown);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--primary-pink);
+    color: var(--white);
+    font-size: 1.5rem;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.btn-icon:hover {
+    background-color: var(--primary-pink-hover);
+    transform: scale(1.1);
+}
+
+:focus-visible {
+    outline: 3px solid var(--text-brown);
+    outline-offset: 4px;
+}
+
+/* ==========================================================================
+   4. NAVIGATION
+   ========================================================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 245, 233, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(73, 51, 35, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-logo {
+    font-size: 1.8rem;
+    color: var(--primary-pink);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-brown);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-pink);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after { width: 100%; }
+.nav-links .btn::after { display: none; }
+.mobile-only { display: none; }
+
+.nav-toggle, .nav-toggle-label { display: none; }
+
+/* ==========================================================================
+   5. HERO SECTION WITH FLOATING BADGES & PROOF
+   ========================================================================== */
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hero-social-proof {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.avatar-stack {
+    display: flex;
+}
+
+.avatar-stack img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-cream);
+    object-fit: cover;
+    margin-left: -10px;
+}
+
+.avatar-stack img:first-child { margin-left: 0; }
+
+.proof-text {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: var(--text-brown);
+}
+
+.hero-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transform: rotate(2deg);
+    transition: var(--transition);
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+}
+
+.hero-image:hover { transform: rotate(0deg); }
+
+.floating-badge-card {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    z-index: 3;
+    background: var(--white);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-hover);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.floating-badge-card img {
+    width: 45px;
+    height: 45px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+}
+
+.badge-title {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-brown);
+}
+
+.badge-sub {
+    font-size: 0.8rem;
+    color: var(--text-brown-light);
+}
+
+.blob-shape {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(135deg, var(--accent-peach), var(--primary-pink));
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   6. FEATURED FLAVORS
+   ========================================================================== */
+.section-header { margin-bottom: 4rem; }
+
+.grid-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.flavor-card, .testimonial-card, .feature-card {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.flavor-card:hover, .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.flavor-card:hover .card-image img { transform: scale(1.05); }
+
+.badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-brown);
+}
+
+.mint-badge { background-color: var(--accent-green); }
+.peach-badge { background-color: var(--accent-peach); }
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content p { margin-bottom: auto; }
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(73, 51, 35, 0.1);
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-brown);
+}
+
+/* ==========================================================================
+   7. BRAND STORY WITH MOSAIC
+   ========================================================================== */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-image-mosaic {
+    position: relative;
+}
+
+.story-img-main {
+    width: 85%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.story-img-sub {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 50%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 6px solid var(--bg-cream);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ==========================================================================
+   8. FEATURE CARDS
+   ========================================================================== */
+.features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.feature-card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.feature-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.feature-card:hover .feature-card-image img {
+    transform: scale(1.05);
+}
+
+.feature-card-body {
+    padding: 2rem;
+}
+
+.feature-card-body h3 { margin-bottom: 0.75rem; }
+.feature-card-body p { margin-bottom: 0; }
+
+/* ==========================================================================
+   9. GALLERY SECTION (6-PHOTO GRID)
+   ========================================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: 240px;
+    box-shadow: var(--shadow-sm);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(73, 51, 35, 0.6);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+/* ==========================================================================
+   10. TESTIMONIALS WITH AVATARS
+   ========================================================================== */
+.testimonial-card {
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.avatar-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-pink);
+}
+
+.customer-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.stars {
+    color: #F4A261;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-brown);
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   11. PROMO BANNER (SIDE-BY-SIDE WITH IMAGE)
+   ========================================================================== */
+.promo-card-grid {
+    background: linear-gradient(135deg, var(--accent-peach), var(--primary-pink));
+    border-radius: var(--radius-lg);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.promo-text-side {
+    padding: 4rem 3rem;
+}
+
+.promo-image-side {
+    height: 100%;
+}
+
+.promo-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promo-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin-top: 1.5rem;
+}
+
+.promo-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.promo-form input:focus { outline: 3px solid var(--text-brown); }
+
+/* ==========================================================================
+   12. FOOTER PHOTO STRIP
+   ========================================================================== */
+.footer-photo-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: 140px;
+    overflow: hidden;
+}
+
+.footer-photo-strip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.footer-photo-strip img:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
+.footer {
+    background-color: var(--text-brown);
+    color: var(--bg-cream);
+    padding: 4rem 0 2rem;
+}
+
+.footer h4, .footer .brand-logo { color: var(--bg-cream); }
+.footer p { color: #d4c6bc; }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-links ul li { margin-bottom: 0.8rem; }
+.footer-links a:hover { color: var(--primary-pink); }
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 245, 233, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-pink);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 245, 233, 0.1);
+    padding-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   14. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-grid, .story-grid, .promo-card-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+    .hero-actions, .hero-social-proof { justify-content: center; }
+    .story-grid { flex-direction: column-reverse; display: flex; }
+    .promo-form { flex-direction: column; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-photo-strip { grid-template-columns: repeat(3, 1fr); height: 180px; }
+}
+
+@media (max-width: 768px) {
+    .section-padding { padding: 3rem 0; }
+    .desktop-only { display: none; }
+    
+    .nav-toggle-label {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 24px;
+        position: relative;
+        z-index: 1001;
+    }
+    
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: var(--text-brown);
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        border-radius: 2px;
+        transition: var(--transition);
+    }
+    
+    .nav-toggle-label span { top: 10px; }
+    .nav-toggle-label span::before { content: ''; top: -10px; }
+    .nav-toggle-label span::after { content: ''; bottom: -10px; }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-cream);
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .nav-toggle:checked ~ .nav-links { max-height: 400px; }
+    
+    .nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; }
+    .nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); bottom: 0; }
+    
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { display: block; padding: 1rem; }
+    .mobile-only { display: block; padding: 1rem; }
+    
+    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+    .social-links { justify-content: center; }
+    .floating-badge-card { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .hero-image:hover, .flavor-card:hover, .btn:hover { transform: none; }
+}

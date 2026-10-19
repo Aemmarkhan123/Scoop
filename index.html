@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scoop — Handcrafted premium ice cream made with love and fresh ingredients.">
+    <title>Scoop | Premium Handcrafted Ice Cream</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">SCOOP.</a>
+            
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle Navigation">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#flavors">Flavors</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="mobile-only"><a href="#order" class="btn btn-primary">Order Now</a></li>
+            </ul>
+            
+            <a href="#order" class="btn btn-primary desktop-only">Order Now</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION WITH COLLAGE -->
+        <header id="home" class="hero section-padding">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Happiness Comes in Scoops.</h1>
+                    <p>Experience the joy of handcrafted, premium ice cream. Made in small batches with the freshest natural ingredients for a taste you'll never forget.</p>
+                    <div class="hero-actions">
+                        <a href="#flavors" class="btn btn-primary">Explore Our Flavors</a>
+                        <a href="#story" class="btn btn-outline">Our Story</a>
+                    </div>
+                    <div class="hero-social-proof">
+                        <div class="avatar-stack">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=120&auto=format&fit=crop" alt="Customer avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=120&auto=format&fit=crop" alt="Customer avatar">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=120&auto=format&fit=crop" alt="Customer avatar">
+                        </div>
+                        <p class="proof-text">Loved by <strong>10,000+</strong> dessert lovers</p>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <div class="blob-shape"></div>
+                    <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=800&auto=format&fit=crop" alt="A variety of premium colorful ice cream scoops" class="hero-image">
+                    
+                    <!-- Floating Sub-Photo Badge -->
+                    <div class="floating-badge-card">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=200&auto=format&fit=crop" alt="Fresh waffle cone">
+                        <div>
+                            <span class="badge-title">Fresh Daily</span>
+                            <span class="badge-sub">100% Organic Dairy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- FEATURED FLAVORS -->
+        <section id="flavors" class="flavors section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Our Signature Flavors</h2>
+                    <p>Discover the scoops everyone is talking about.</p>
+                </div>
+                
+                <div class="grid-container cards-grid">
+                    <article class="flavor-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1553177595-4de2bb0842b9?q=80&w=600&auto=format&fit=crop" alt="Strawberry Dream Ice Cream">
+                            <span class="badge mint-badge">Best Seller</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Strawberry Dream</h3>
+                            <p>Fresh organic strawberries blended with rich sweet cream.</p>
+                            <div class="card-footer">
+                                <span class="price">₹250</span>
+                                <button class="btn btn-icon" aria-label="Add to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="flavor-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?q=80&w=600&auto=format&fit=crop" alt="Belgian Chocolate Ice Cream">
+                        </div>
+                        <div class="card-content">
+                            <h3>Belgian Chocolate</h3>
+                            <p>Decadent dark cocoa folded into a velvety fudge base.</p>
+                            <div class="card-footer">
+                                <span class="price">₹280</span>
+                                <button class="btn btn-icon" aria-label="Add to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="flavor-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?q=80&w=600&auto=format&fit=crop" alt="Vanilla Cloud Ice Cream">
+                        </div>
+                        <div class="card-content">
+                            <h3>Vanilla Cloud</h3>
+                            <p>Classic Madagascar vanilla bean, whipped to airy perfection.</p>
+                            <div class="card-footer">
+                                <span class="price">₹220</span>
+                                <button class="btn btn-icon" aria-label="Add to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="flavor-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1515022278453-61a7a242f36f?q=80&w=600&auto=format&fit=crop" alt="Pistachio Paradise Ice Cream">
+                        </div>
+                        <div class="card-content">
+                            <h3>Pistachio Paradise</h3>
+                            <p>Roasted Sicilian pistachios with a hint of sea salt.</p>
+                            <div class="card-footer">
+                                <span class="price">₹300</span>
+                                <button class="btn btn-icon" aria-label="Add to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="flavor-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?q=80&w=600&auto=format&fit=crop" alt="Mango Sunshine Ice Cream">
+                            <span class="badge peach-badge">Seasonal</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Mango Sunshine</h3>
+                            <p>Sweet Alphonso mangoes transformed into a creamy delight.</p>
+                            <div class="card-footer">
+                                <span class="price">₹260</span>
+                                <button class="btn btn-icon" aria-label="Add to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="flavor-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?q=80&w=600&auto=format&fit=crop" alt="Cookies & Cream Ice Cream">
+                        </div>
+                        <div class="card-content">
+                            <h3>Cookies & Cream</h3>
+                            <p>Crushed chocolate wafers folded generously into sweet cream.</p>
+                            <div class="card-footer">
+                                <span class="price">₹250</span>
+                                <button class="btn btn-icon" aria-label="Add to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRAND STORY WITH DUAL PHOTO MOSAIC -->
+        <section id="story" class="story section-padding">
+            <div class="container story-grid">
+                <div class="story-image-mosaic">
+                    <img src="https://images.unsplash.com/photo-1558500661-80bb15b22b0c?q=80&w=800&auto=format&fit=crop" alt="Artisan chef preparing fresh ice cream" class="story-img-main">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=500&auto=format&fit=crop" alt="Fresh artisan churn preparation" class="story-img-sub">
+                </div>
+                <div class="story-content">
+                    <h2>Made with Love.<br>Served with Joy.</h2>
+                    <p>At Scoop, we believe that great ice cream starts with great ingredients. That's why we source our milk from local dairy farms and craft every batch by hand right here in our kitchen.</p>
+                    <p>No artificial flavors. No shortcuts. Just pure, joyful indulgence meant to be shared with the people you love.</p>
+                    <a href="#about" class="btn btn-outline" style="margin-top: 1rem;">Discover Our Story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE SCOOP (4 FEATURE BLOCKS WITH FULL IMAGES) -->
+        <section class="features section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Why Choose Scoop?</h2>
+                    <p>Crafted without compromise from farm to scoop.</p>
+                </div>
+                <div class="grid-container features-grid text-center">
+                    <div class="feature-card">
+                        <div class="feature-card-image">
+                            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=500&auto=format&fit=crop" alt="Fresh organic strawberries">
+                        </div>
+                        <div class="feature-card-body">
+                            <h3>Fresh Ingredients</h3>
+                            <p>Only organic fruits, farm-fresh milk, and real extracts.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card-image">
+                            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=500&auto=format&fit=crop" alt="Handcrafted churn processing">
+                        </div>
+                        <div class="feature-card-body">
+                            <h3>Small Batches</h3>
+                            <p>Meticulously churned by hand for unmatched velvet texture.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card-image">
+                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=500&auto=format&fit=crop" alt="Waffle cone scoop">
+                        </div>
+                        <div class="feature-card-body">
+                            <h3>Pure Happiness</h3>
+                            <p>Vibrant flavor pairings designed to brighten every moment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTAGRAM 6-PHOTO GRID -->
+        <section id="gallery" class="gallery section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>#ScoopLife Gallery</h2>
+                    <p>Tag @ScoopIceCream on Instagram to be featured on our wall.</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=500&auto=format&fit=crop" alt="Ice cream scoops">
+                        <div class="gallery-overlay"><span>@ScoopIceCream</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=500&auto=format&fit=crop" alt="Double cone scoop">
+                        <div class="gallery-overlay"><span>@ScoopIceCream</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1576506295286-5cda482453a2?q=80&w=500&auto=format&fit=crop" alt="Chocolate ice cream bowl">
+                        <div class="gallery-overlay"><span>@ScoopIceCream</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=500&auto=format&fit=crop" alt="Ice cream toppings bar">
+                        <div class="gallery-overlay"><span>@ScoopIceCream</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?q=80&w=500&auto=format&fit=crop" alt="Vanilla bean cone">
+                        <div class="gallery-overlay"><span>@ScoopIceCream</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1515022278453-61a7a242f36f?q=80&w=500&auto=format&fit=crop" alt="Pistachio scoop bowl">
+                        <div class="gallery-overlay"><span>@ScoopIceCream</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS WITH AVATARS -->
+        <section class="testimonials section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Scoops of Love</h2>
+                    <p>Don't just take our word for it.</p>
+                </div>
+                <div class="grid-container cards-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Priya S. avatar photo" class="avatar-img">
+                            <div>
+                                <h4 class="customer-name">Priya S.</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"Absolutely the best pistachio ice cream I've ever had. It tastes incredibly fresh and not overly sweet!"</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Rahul M. avatar photo" class="avatar-img">
+                            <div>
+                                <h4 class="customer-name">Rahul M.</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"The delivery was perfect. The ice cream stayed completely frozen and the presentation is top tier."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop" alt="Ananya T. avatar photo" class="avatar-img">
+                            <div>
+                                <h4 class="customer-name">Ananya T.</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"Strawberry Dream lives up to its name. Scoop is now our family's absolute favorite weekend treat."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMOTIONAL BANNER WITH PRODUCT DISPLAY SIDE IMAGE -->
+        <section class="promo section-padding">
+            <div class="container">
+                <div class="promo-card-grid">
+                    <div class="promo-text-side">
+                        <h2>Your First Scoop Is on Us!</h2>
+                        <p>Join our sweet club and get 10% off your first order plus exclusive access to limited seasonal flavors.</p>
+                        <form class="promo-form" onsubmit="event.preventDefault();">
+                            <label for="email-input" class="sr-only">Email address</label>
+                            <input type="email" id="email-input" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary">Get My Discount</button>
+                        </form>
+                    </div>
+                    <div class="promo-image-side">
+                        <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=600&auto=format&fit=crop" alt="Delicious ice cream dessert box">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER INSTAGRAM STRIP (NEW VISUAL BAR) -->
+        <div class="footer-photo-strip">
+            <img src="https://images.unsplash.com/photo-1553177595-4de2bb0842b9?q=80&w=300&auto=format&fit=crop" alt="Footer photo strip item">
+            <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?q=80&w=300&auto=format&fit=crop" alt="Footer photo strip item">
+            <img src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?q=80&w=300&auto=format&fit=crop" alt="Footer photo strip item">
+            <img src="https://images.unsplash.com/photo-1515022278453-61a7a242f36f?q=80&w=300&auto=format&fit=crop" alt="Footer photo strip item">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?q=80&w=300&auto=format&fit=crop" alt="Footer photo strip item">
+            <img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?q=80&w=300&auto=format&fit=crop" alt="Footer photo strip item">
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="brand-logo footer-logo">SCOOP.</a>
+                <p>Premium handcrafted ice cream, churning happiness daily.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#flavors">Shop Flavors</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>hello@scoopicecream.com</p>
+                <p>+91 98765 43210</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center container">
+            <p>&copy; 2026 Scoop Premium Ice Cream. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
